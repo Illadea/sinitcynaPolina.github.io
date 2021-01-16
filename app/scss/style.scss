@@ -53,32 +53,41 @@
   }
 }
 
-.left-side-elements {
-  width: 40px;
+.side-elements {
   position: fixed;
   bottom: 0px;
-  left: 40px;
-  right: auto;
+  width: 76px;
   @extend %white;
+    &_left {
+      left: 20px;
+      right: auto;
+    }
+    &_right {
+      left: auto;
+      right: 20px;
+      & a {
+        margin-bottom: 185px;
+      }
+    }
     &::after {
       content: "";
       display: block;
       width: 1px;
       height: 90px;
-      margin: 20px auto 0px;
+      margin: 0px auto;
       background-color:#ccd6f6;
   }
     &__list-item {
       display: flex;
       flex-direction: column;
       align-items: center;
-      width: 40px;
-      left: 40px;
-      right: auto;
-      padding: 20px;
+      padding: 10px;
+      margin-bottom: 19px;
         & a {
           width: 20px;
           height: 20px;
+          writing-mode: vertical-rl;
+          @extend %SFMono-Regular;
           &:hover {
             @extend %green;
           }
@@ -131,3 +140,101 @@
       }
   }
 }
+
+
+.page-section-about {
+  min-height: 100vh;
+  &__inner{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 97px;
+  }
+  &__description {
+    max-width: 600px;
+    & p {
+    margin: 20px 0px 20px;
+    font-size: 18px;
+    line-height: 1.5;
+    @extend %grey;
+    }
+  }
+  &__photo {
+    display: inline-block;
+    position: relative;
+    background: url(../images/me.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 4px;  
+    transition: all .5s;
+    background-color:#64ffda;
+    background-blend-mode: luminosity;
+      &_before:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: url(../images/me.jpg);
+        border-radius: 10px;  
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: inherit; 
+        opacity: 0.5;
+        transition: all .5s;
+      }
+  }
+}
+
+.page-section-about__photo_before:hover:before {
+  opacity: 1;
+}
+
+// .demo {
+//   display: inline-block;
+//   position: relative;
+//   width: 300px;
+//   height: 305px;
+//   margin: 1.5em .5em 0;
+//   background: url(../images/me.jpg);
+//   background-position: center;
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   border-radius: 10px;  
+//   transition: all .5s;
+//   background-color:#64ffda;
+//   background-blend-mode: luminosity;
+  
+//   &--before:before {
+//     content: '';
+//     display: block;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     bottom: 0;
+//     left: 0;
+//     background: url(../images/me.jpg);
+//     border-radius: 10px;  
+//     background-position: center;
+//     background-size: cover;
+//     background-repeat: no-repeat;
+//     border-radius: inherit; 
+//     opacity: 0.5;
+//     transition: all .5s;
+//     }
+    
+//   &:after {
+//     content: '';
+//     position: absolute;
+//     top: -1.5em;
+//     left: .5em;
+//     }
+//   }
+
+
+// .demo--before:hover:before {
+//   opacity: 1;
+//   }
