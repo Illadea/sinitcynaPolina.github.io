@@ -108,7 +108,7 @@
     @extend %white;
     font-size: clamp(40px, 8vw, 80px);
     margin-top: 30px;
-    @extend %Calibre-Semibold;
+    @extend %Commissioner-Semibold;
     & span {
       display: block;
       @extend %grey;
@@ -117,16 +117,16 @@
   }
   &__description {
       @extend %grey;
-      margin: 20px 0px 0px;
+      margin: 20px 0px 20px;
       max-width: 500px;
       font-size: 20px;
-      @extend %Calibre-Regular;
+      @extend %Commissioner-Regular;
       line-height: 1.3;
     }
   &__btn {
     @extend %green;
     background-color: transparent;
-    border: 1px solid #64ffda;;
+    border: 1px solid #64ffda;
     border-radius: 4px;
     padding: 1.25rem 1.75rem;
     margin-top: 50px;
@@ -147,7 +147,7 @@
   &__inner{
     display: grid;
     grid-template-columns: 3fr 2fr;
-    gap: 97px;
+    gap: 110px;
   }
   &__description {
     max-width: 600px;
@@ -159,9 +159,8 @@
     }
   }
   &__photo {
-    display: inline-block;
     position: relative;
-    background: url(../images/me.jpg);
+    background-image: url(../images/me.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -169,7 +168,19 @@
     transition: all .5s;
     background-color:#64ffda;
     background-blend-mode: luminosity;
-      &_before:before {
+    margin: 10px 20px;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #64ffda;
+        top: 20px;
+        right: -20px;
+        z-index: -1;
+        border-radius: 4px;
+      }
+      &_before::before {
         content: '';
         display: block;
         position: absolute;
@@ -178,11 +189,10 @@
         bottom: 0;
         left: 0;
         background: url(../images/me.jpg);
-        border-radius: 10px;  
+        border-radius: 4px;  
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        border-radius: inherit; 
         opacity: 0.5;
         transition: all .5s;
       }
@@ -193,48 +203,98 @@
   opacity: 1;
 }
 
-// .demo {
-//   display: inline-block;
-//   position: relative;
-//   width: 300px;
-//   height: 305px;
-//   margin: 1.5em .5em 0;
-//   background: url(../images/me.jpg);
-//   background-position: center;
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   border-radius: 10px;  
-//   transition: all .5s;
-//   background-color:#64ffda;
-//   background-blend-mode: luminosity;
-  
-//   &--before:before {
-//     content: '';
-//     display: block;
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     bottom: 0;
-//     left: 0;
-//     background: url(../images/me.jpg);
-//     border-radius: 10px;  
-//     background-position: center;
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//     border-radius: inherit; 
-//     opacity: 0.5;
-//     transition: all .5s;
-//     }
-    
-//   &:after {
-//     content: '';
-//     position: absolute;
-//     top: -1.5em;
-//     left: .5em;
-//     }
-//   }
+
+.page-section-experience {
+  min-height: 100vh;
+  & .page-section-title-h2 {
+    counter-increment: item 2;
+    content: "0" counter(item) ".";
+  }
+}
 
 
-// .demo--before:hover:before {
-//   opacity: 1;
-//   }
+// Слайдер
+
+
+.tabs {
+  position: relative;
+  width: 800px;
+  margin-top: 150px;
+  padding: 0;
+  border: 1px solid #dee8f2;
+}
+
+.tab-content {
+  position: absolute;
+  display: none;
+  height: 100%;
+  padding: 15px;
+  background: white;
+  top: 0;
+  left: 180px;
+}
+
+p {
+  margin: 0;
+}
+
+input {
+  display: none;
+}
+
+label {
+  display: block;
+  width: 180px;
+  padding: 15px;
+  color: #000000;
+  font-weight: 700;
+  background: #9278aa;
+  cursor: pointer;
+}
+
+input:checked + label {
+  color: #000000;
+  background: white;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+}
+
+.tab-content {
+  animation: scale 0.7s ease-in-out;
+}
+
+@keyframes scale {
+  0% {
+      transform: scale(0.9);
+      opacity: 0;
+  }
+  50% {
+      transform: scale(1.005);
+      opacity: 0.5;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@media (max-width: 425px) {
+  .tab-content {
+      position: relative;
+      left: 0;
+  }
+
+  label {
+      width: 100%;
+  }
+
+  input:checked + label {
+      border-bottom: 1px solid #9278aa;
+  }
+}
+
