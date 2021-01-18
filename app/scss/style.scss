@@ -295,26 +295,42 @@
     justify-content: space-between;
     margin-bottom: 100px;
   }
-  &__image img {
-    max-width: 580px;
-    border-radius: 4px;
+  &__image {
+    filter: grayscale(50%) contrast(1) brightness(90%);
+    mix-blend-mode: screen;
+    box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+    &:hover {
+      filter: unset;
+      mix-blend-mode: unset;
+      transition: all .5s;
+    }
+    & img {
+      max-width: 580px;
+      border-radius: 4px;
+  }
   }
   &__description {
     display: flex;
     flex-direction: column;
     text-align: right;
+    position: relative;
   }
   &__title {
     font-size: clamp(24px, 5vw, 28px);
     @extend %white;
     margin-bottom: 20px;
     @extend %Commissioner-Semibold;
+    margin-bottom: 177px;
+    margin-top: 38px;
   }
-  &__text p {
+  &__text {
     box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
-    position: relative;
+    position: absolute;
+    bottom: 117px;
+    left: -179px;
+    width: 500px;
     z-index: 2;
-    padding: 25px;
+    padding: 20px;
     border-radius: 4px;
     @extend %ligth-navy;
     @extend %light-grey;
@@ -326,7 +342,6 @@
     display: flex;
     justify-content: flex-end;
     position: relative;
-    z-index: 2;
     margin: 15px 0px 10px;
     padding: 0px;
     font-size: 13px;
@@ -340,7 +355,7 @@
     display: flex;
     justify-content: flex-end;
     margin-right: -15px;
-    &:hover {
+    & a:hover {
       @extend %green;
     }
     & a {
@@ -350,5 +365,52 @@
         height: 20px;
       }
     }
+  }
+}
+
+
+.page-section-contacts {
+  margin-top: 200px;
+  & .page-section-title-h2 {
+    counter-increment: item 4;
+    content: "0" counter(item) ".";
+    margin-bottom: 100px;
+  }
+  &__inner {
+    text-align: center;
+    & p {
+      @extend %grey;
+      margin: 0 auto;
+      max-width: 700px;
+      font-size: 20px;
+      line-height: 1.5;
+    }
+  }
+  &__btn {
+    @extend %green;
+    background-color: transparent;
+    border: 1px solid #64ffda;
+    border-radius: 4px;
+    padding: 1.25rem 1.75rem;
+    margin-top: 50px;
+    font-size: 14px;
+    @extend %SFMono-Regular;
+    line-height: 1;
+    text-decoration: none;
+    cursor: pointer;
+      &:hover {
+        background-color: rgba(100,255,218,0.1);
+      }
+  }
+}
+
+.footer{
+  margin-top: 100px;
+  margin-bottom: 50px;
+  &__text{
+    text-align: center;
+    @extend %grey;
+    font-size: 12px;
+    @extend %SFMono-Regular;
   }
 }
