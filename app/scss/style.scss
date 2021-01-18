@@ -143,7 +143,7 @@
 
 
 .page-section-about {
-  min-height: 100vh;
+
   &__inner{
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -205,7 +205,7 @@
 
 
 .page-section-experience {
-  min-height: 100vh;
+  margin-top: 200px;
   & .page-section-title-h2 {
     counter-increment: item 2;
     content: "0" counter(item) ".";
@@ -215,13 +215,8 @@
 .tab-box {
   display: flex;
   justify-content: flex-start;
-  &:after {
-    clear: both; 
-    content:""; 
-    display: block;
-  }
+  min-height: 345px;
   &__heading {
-    margin-bottom: 5px;
     font-size: 22px;
     @extend %white;
     & span {
@@ -239,23 +234,21 @@
     & li.select a {
       @extend %ligth-navy;
       @extend %green;
-      width: 130px;
-    }
-    & .active {
-      display: inline-block;
-      padding: 5px;
+      width: 132px;
+      border: 1px solid #64ffda;
     }
     & li {
-      float: left;
-      padding: 10px 46px;
+      margin: 0px 50px 10px 0;
       & a {
-        display: inline-block;
+        display: block;
         padding: 10px 25px;
+        border: 1px solid #0a192f;
         @extend %white;
         &:hover {
           @extend %ligth-navy;
           @extend %green;
-          width: 130px;
+          width: 132px;
+          border: 1px solid #64ffda;
         }
       }
     }
@@ -291,3 +284,71 @@
   }
 }
 
+.page-section-projects {
+  margin-top: 200px;
+  & .page-section-title-h2 {
+    counter-increment: item 3;
+    content: "0" counter(item) ".";
+  }
+  &__inner{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+  }
+  &__image img {
+    max-width: 580px;
+    border-radius: 4px;
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+  }
+  &__title {
+    font-size: clamp(24px, 5vw, 28px);
+    @extend %white;
+    margin-bottom: 20px;
+    @extend %Commissioner-Semibold;
+  }
+  &__text p {
+    box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+    position: relative;
+    z-index: 2;
+    padding: 25px;
+    border-radius: 4px;
+    @extend %ligth-navy;
+    @extend %light-grey;
+    font-size: 18px;
+  }
+  &__technologies {
+    @extend %SFMono-Regular;
+    @extend %light-grey;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 2;
+    margin: 15px 0px 10px;
+    padding: 0px;
+    font-size: 13px;
+    & li {
+      margin: 0px 0px 5px 20px;
+    }
+  }
+  &__links {
+    @extend %white;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -15px;
+    &:hover {
+      @extend %green;
+    }
+    & a {
+      padding: 13px;
+      & svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
