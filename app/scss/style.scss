@@ -10,6 +10,7 @@
   padding: 0px 50px;
 }
 
+  // MENU STYLES 
 .menu {
   &__list {
     display: flex;
@@ -45,6 +46,7 @@
     @extend %SFMono-Regular;
     line-height: 1;
     text-decoration: none;
+    max-width: 95px;
     cursor: pointer;
     margin-left: 15px;
       &:hover {
@@ -53,6 +55,82 @@
   }
 }
 
+@media (max-width: 800px) {
+  .logo {
+    display: none;
+  }
+  .menu {
+    &__list {
+      display: block;
+      position: absolute;
+      top: 65px;
+      left: 0;
+      width: 100%;
+      background-color: #112240;
+      left: -100%;
+      transition: all 0.4s ease;
+      box-shadow: -10px 0px 30px -15px #64ffda;
+      &-item {
+        margin: 40px 0px 40px 33px;
+      }
+      &.open-menu {
+        left: 0;
+      }
+    }
+    &__btn-resume {
+      margin: 40px 0px 40px 33px;
+    }
+    &__hamburger-btn {
+      position: relative;
+      width: 40px; 
+      height: 35px;
+      display: block;
+      margin-left: 10px;
+      &::after {
+        content: '';
+        bottom: 5px;
+        height: 3px;
+        width: 100%;
+        position: absolute;
+        background: #64ffda;
+        margin: 0 auto;
+      }
+      &::before {
+        content: '';
+        top: 5px;
+        height: 3px;
+        width: 100%;
+        position: absolute;
+        background: #64ffda;
+        margin: 0 auto;
+      }
+      & span {
+        top: 16px;
+        height: 3px;
+        width: 100%;
+        position: absolute;
+        background: #64ffda;
+        margin: 0 auto;
+      }
+      &.open-menu span {
+        opacity:0; 
+        transition: 0.5s; 
+      }
+      &.open-menu:before {
+        transform: rotate(38deg);
+        top: 16px;
+        transition: 0.4s;
+      }
+      &.open-menu:after {
+        transform: rotate(-38deg);
+        bottom: 16px;
+        transition: 0.4s;
+      }
+    }
+  }
+}
+
+  // LEFT AND RIGHT ELEMENTS STYLES 
 .side-elements {
   position: fixed;
   bottom: 0px;
@@ -95,9 +173,17 @@
   }
 }
 
+@media (max-width: 800px) {
+  .side-elements {
+    display: none;
+  }
+}
+
+
+  // 1st BLOCK STYLES 
 .page-section-hero {
   min-height: 100vh;
-  margin-top: 150px;
+  margin-top: 23vh;
   &__subtitle {
     @extend %green;
     @extend %SFMono-Regular;
@@ -141,9 +227,8 @@
   }
 }
 
-
+ // 2d BLOCK STYLES 
 .page-section-about {
-
   &__inner{
     display: grid;
     grid-template-columns: 3fr 2fr;
@@ -203,7 +288,7 @@
   opacity: 1;
 }
 
-
+ // 3d BLOCK STYLES 
 .page-section-experience {
   margin-top: 200px;
   & .page-section-title-h2 {
@@ -284,6 +369,7 @@
   }
 }
 
+ // 4th BLOCK STYLES 
 .page-section-projects {
   margin-top: 200px;
   & .page-section-title-h2 {
@@ -294,6 +380,10 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 100px;
+    flex-direction: row;
+    &_right {
+      flex-direction: row-reverse;
+    }
   }
   &__image {
     filter: grayscale(50%) contrast(1) brightness(90%);
@@ -322,6 +412,9 @@
     @extend %Commissioner-Semibold;
     margin-bottom: 177px;
     margin-top: 38px;
+    &_right {
+      text-align: left;
+    }
   }
   &__text {
     box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
@@ -335,10 +428,15 @@
     @extend %ligth-navy;
     @extend %light-grey;
     font-size: 18px;
+    &_right {
+      text-align: left;
+      bottom: 117px;
+      left: -1px;
+    }
   }
   &__technologies {
     @extend %SFMono-Regular;
-    @extend %light-grey;
+    @extend %green;
     display: flex;
     justify-content: flex-end;
     position: relative;
@@ -348,6 +446,12 @@
     & li {
       margin: 0px 0px 5px 20px;
     }
+    &_right {
+      justify-content: flex-start;
+      & li {
+        margin: 0px 20px 5px 0px;
+      }
+    }
   }
   &__links {
     @extend %white;
@@ -355,6 +459,9 @@
     display: flex;
     justify-content: flex-end;
     margin-right: -15px;
+    &_right{
+      margin-left: -15px
+    }
     & a:hover {
       @extend %green;
     }
@@ -365,10 +472,13 @@
         height: 20px;
       }
     }
+    &_right {
+      justify-content: flex-start;
+    }
   }
 }
 
-
+ // 5th BLOCK STYLES 
 .page-section-contacts {
   margin-top: 200px;
   & .page-section-title-h2 {
@@ -404,13 +514,48 @@
   }
 }
 
-.footer{
+ // FOOTER STYLES 
+.footer {
   margin-top: 100px;
   margin-bottom: 50px;
-  &__text{
+  &__text {
     text-align: center;
     @extend %grey;
     font-size: 12px;
     @extend %SFMono-Regular;
   }
+  &__social-links {
+    display: none;
+  }
 }
+
+@media (max-width: 800px) {
+  .footer {
+    &__social-links {
+      display: block;
+      width: 100%;
+      max-width: 270px;
+      margin: 0px auto 10px;
+      & ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      & a {
+        display: inline-block;
+        color:#ccd6f6;
+        position: relative;
+        padding: 10px;
+        cursor: pointer;
+        &:hover {
+          color:#64ffda;
+        }
+      }
+      & svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+

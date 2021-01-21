@@ -8,3 +8,11 @@ $(function(){
     return (false);                                         // - прерывается обработка события onClick
   })
 })
+
+
+$(document).ready(function() {
+  $('.menu__hamburger-btn').click(function() {
+      $('.menu__hamburger-btn').toggleClass('open-menu');
+      $('.menu__list').toggleClass('open-menu');
+  });
+});
