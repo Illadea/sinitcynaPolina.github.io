@@ -10,12 +10,28 @@ $(function(){
   })
 })
 
-/* NAVIGATION, ADDING BURGER MENU */
+/* NAVIGATION, BURGER MENU */
 $(document).ready(function() {
   $('.menu__hamburger-btn').click(function() {
       $('.menu__hamburger-btn').toggleClass('open-menu');
       $('.menu__list').toggleClass('open-menu');
       $('body').toggleClass('fixed-page');
+  });
+});
+
+$(document).ready(function() {
+  $('.container').click(function() {
+      $('.menu__hamburger-btn').removeClass('open-menu');
+      $('.menu__list').removeClass('open-menu');
+      $('body').removeClass('fixed-page');
+  });
+});
+
+$(document).ready(function() {
+  $('.menu__list-item').click(function() {
+      $('.menu__hamburger-btn').removeClass('open-menu');
+      $('.menu__list').removeClass('open-menu');
+      $('body').removeClass('fixed-page');
   });
 });
 
