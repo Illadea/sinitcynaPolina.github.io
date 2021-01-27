@@ -367,7 +367,7 @@
   &__nav {
     max-width: 230px;
     @extend %SFMono-Regular;
-    & li.select a {
+    & li.tab-box__nav-item-selected a {
       @extend %ligth-navy;
       @extend %green;
       width: 132px;
@@ -428,7 +428,7 @@
       flex-direction: row;
       & li {
         margin: 0px 10px 25px 0;
-        &.select a {
+        &.tab-box__nav-item-selected a {
           width: 100%;
         }
         & a {

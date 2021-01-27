@@ -1,11 +1,11 @@
 /* TABS */
 $(function(){
-  $('.tab-box__nav li:first').addClass('select');                // Первой вкладке добавляется класс select
+  $('.tab-box__nav li:first').addClass('tab-box__nav-item-selected');                // Первой вкладке добавляется класс tab-box__nav-item-selected
   $('.tab-box__panels>div').hide().filter(':first').show();      // Скрываются все блоки с описанием вкладок кроме первого
   $('.tab-box__nav a').click(function(){                         // При клике на вкладку
     $('.tab-box__panels>div').hide().filter(this.hash).show();   // - показывается блок с описанием текущей вкладки
-    $('.tab-box__nav li').removeClass('select');                 // - удаляется класс 'select' у активной ранее вкладки
-    $(this).parent().addClass('select');                    // - добавляется класс 'select' для выбранной вкладки
+    $('.tab-box__nav li').removeClass('tab-box__nav-item-selected');                 // - удаляется класс 'tab-box__nav-item-selected' у активной ранее вкладки
+    $(this).parent().addClass('tab-box__nav-item-selected');                    // - добавляется класс 'tab-box__nav-item-selected' для выбранной вкладки
     return (false);                                         // - прерывается обработка события onClick
   })
 })
@@ -35,9 +35,7 @@ $(document).ready(function() {
   });
 });
 
-
-
-/* NAVIGATION, when the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+/* NAVIGATION: when the user scrolls down, hide the navbar. When the user scrolls up, show the navbar and add boxshadow to it*/
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
   var currentScrollPos = window.pageYOffset;
