@@ -1,6 +1,6 @@
 /*SFMono font*/
 @font-face {
-  font-family: 'SFMono-Regular', sans-serif;
+  font-family: 'SFMono-Regular';
   src: url("../fonts/SFMono/SFMono-Regular.woff2") format('woff2'),
        url("../fonts/SFMono/SFMono-Regular.woff") format('woff'),
        url("../fonts/SFMono/SFMono-Regular.ttf") format('ttf');
@@ -10,7 +10,7 @@
 }
 
 @font-face {
-  font-family: 'SFMono-Medium', sans-serif;
+  font-family: 'SFMono-Medium';
   src: url("../fonts/SFMono/SFMono-Medium.woff2") format('woff2'),
        url("../fonts/SFMono/SFMono-Medium.woff") format('woff'),
        url("../fonts/SFMono/SFMono-Medium.ttf") format('ttf');
@@ -20,7 +20,7 @@
 }
 
 @font-face {
-  font-family: 'SFMono-Semibold.woff', sans-serif;
+  font-family: 'SFMono-Semibold.woff';
   src: url("../fonts/SFMono/SFMono-Semibold.woff2") format('woff2'),
        url("../fonts/SFMono/SFMono-Semibold.woff") format('woff'),
        url("../fonts/SFMono/SFMono-Semibold.ttf") format('ttf');
