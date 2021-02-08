@@ -1,5 +1,5 @@
 # Portfolio Website
-My personal portfolio Website.
+My personal portfolio website.
 To view a live demo, [click here](https://sinicynapolina.ru/).
 
 ## How To Use
