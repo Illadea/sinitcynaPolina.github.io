@@ -35,7 +35,7 @@ $(document).ready(function() {
   });
 });
 
-/* NAVIGATION: when the user scrolls down, hide the navbar. When the user scrolls up, show the navbar and add boxshadow to it*/
+/* NAVIGATION: when user scrolls down, hide the navbar. When user scrolls up, show the navbar and add boxshadow to it*/
 var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
   var currentScrollPos = window.pageYOffset;
