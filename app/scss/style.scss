@@ -666,7 +666,7 @@
 
  // FOOTER STYLES 
 .footer {
-  margin-top: 100px;
+  margin-top: 80px;
   margin-bottom: 50px;
   &__text {
     text-align: center;
@@ -675,7 +675,29 @@
     @extend %SFMono-Regular;
   }
   &__social-links {
-    display: none;
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 0px auto 20px;
+    & ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    & a {
+      display: inline-block;
+      color:#ccd6f6;
+      position: relative;
+      padding: 10px;
+      cursor: pointer;
+      &:hover {
+        color:#64ffda;
+      }
+    }
+    & svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 }
 
@@ -683,30 +705,6 @@
   .footer {
     margin-top: 30px;
     margin-bottom: 30px;
-    &__social-links {
-      display: block;
-      width: 100%;
-      max-width: 250px;
-      margin: 0px auto 20px;
-      & ul {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      & a {
-        display: inline-block;
-        color:#ccd6f6;
-        position: relative;
-        padding: 10px;
-        cursor: pointer;
-        &:hover {
-          color:#64ffda;
-        }
-      }
-      & svg {
-        width: 20px;
-        height: 20px;
-      }
-    }
+    
   }
 }

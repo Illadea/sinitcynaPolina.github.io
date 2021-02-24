@@ -36,15 +36,18 @@ $(document).ready(function() {
 });
 
 /* NAVIGATION: when user scrolls down, hide the navbar. When user scrolls up, show the navbar and add boxshadow to it*/
-var prevScrollpos = window.pageYOffset;
+let prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
+  let currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
     document.getElementById("header").style.top = "0";
     document.getElementById("header").style.boxShadow = "0 10px 30px -10px rgba(2,12,27,0.7)";
-  } 
-  else {
-    document.getElementById("header").style.top = "-100px";
+  } else {
+    document.getElementById("header").style.top = "-111px";
+  }
+  if (window.pageYOffset === 0) {
+    document.getElementById("header").style.boxShadow = "unset";
+    document.getElementById("header").style.top = "0px";
   }
   prevScrollpos = currentScrollPos;
 }
