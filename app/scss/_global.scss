@@ -83,7 +83,7 @@ body {
     content: "0" counter(item) ".";
     margin-right: 10px;
     @extend %green;
-    @extend %SFMono-Regular;
+    @extend %IBM-Plex-Regular;
     font-size: clamp(16px,3vw,25px);
     font-weight: 400;
   }

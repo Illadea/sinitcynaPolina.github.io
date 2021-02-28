@@ -1,6 +1,5 @@
-@import "fonts";
-@import "vars";
 @import "libs";
+@import "vars";
 @import "global";
 
 .header {
@@ -30,7 +29,7 @@
     flex-direction: row;
     align-items: center;
     @extend %white;
-    @extend %SFMono-Regular;
+    @extend %IBM-Plex-Regular;
     font-size: 14px;
     line-height: 1.3;
   }
@@ -55,7 +54,7 @@
     border: 1px solid #64ffda;;
     border-radius: 4px;
     padding: 0.75rem 1.3rem;
-    @extend %SFMono-Regular;
+    @extend %IBM-Plex-Regular;
     line-height: 1;
     text-decoration: none;
     max-width: 95px;
@@ -177,7 +176,7 @@
           width: 20px;
           height: 20px;
           writing-mode: vertical-rl;
-          @extend %SFMono-Regular;
+          @extend %IBM-Plex-Regular;
           &:hover {
             @extend %green;
           }
@@ -198,7 +197,7 @@
   margin-top: 23vh;
   &__subtitle {
     @extend %green;
-    @extend %SFMono-Regular;
+    @extend %IBM-Plex-Regular;
     font-size: 20px;
     line-height: 1.1;
   }
@@ -229,7 +228,7 @@
     padding: 1.25rem 1.75rem;
     margin-top: 50px;
     font-size: 14px;
-    @extend %SFMono-Regular;
+    @extend %IBM-Plex-Regular;
     line-height: 1;
     text-decoration: none;
     cursor: pointer;
@@ -360,13 +359,13 @@
     }
   }
   &__range{
-    @extend %SFMono-Regular;
+    @extend %IBM-Plex-Regular;
     font-size: 13px;
     margin-bottom: 25px;
   }
   &__nav {
     max-width: 230px;
-    @extend %SFMono-Regular;
+    @extend %IBM-Plex-Regular;
     & li.tab-box__nav-item-selected a {
       @extend %ligth-navy;
       @extend %green;
@@ -511,7 +510,7 @@
       }
     }
     &__technologies {
-      @extend %SFMono-Regular;
+      @extend %IBM-Plex-Regular;
       @extend %green;
       display: flex;
       justify-content: flex-end;
@@ -638,7 +637,7 @@
     padding: 1.25rem 1.75rem;
     margin-top: 50px;
     font-size: 14px;
-    @extend %SFMono-Regular;
+    @extend %IBM-Plex-Regular;
     line-height: 1;
     text-decoration: none;
     cursor: pointer;
@@ -672,7 +671,7 @@
     text-align: center;
     @extend %grey;
     font-size: 12px;
-    @extend %SFMono-Regular;
+    @extend %IBM-Plex-Regular;
   }
   &__social-links {
     display: block;
