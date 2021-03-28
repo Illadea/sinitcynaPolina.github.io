@@ -366,30 +366,27 @@
   &__nav {
     max-width: 230px;
     @extend %IBM-Plex-Regular;
-    & li.tab-box__nav-item-selected a {
+    &-item {
+      padding: 10px 25px;
+      border: 1px solid #0a192f;
+      @extend %white;
+      cursor: pointer;
+      margin: 0px 50px 10px 0;
+      &:hover {
+        @extend %ligth-navy;
+        @extend %green;
+        width: 132px;
+        border: 1px solid #64ffda;
+      }
+    }
+    &-item_active {
       @extend %ligth-navy;
       @extend %green;
       width: 132px;
       border: 1px solid #64ffda;
     }
-    & li {
-      margin: 0px 50px 10px 0;
-      & a {
-        display: block;
-        padding: 10px 25px;
-        border: 1px solid #0a192f;
-        @extend %white;
-        &:hover {
-          @extend %ligth-navy;
-          @extend %green;
-          width: 132px;
-          border: 1px solid #64ffda;
-        }
-      }
-    }
   }
-  &__panels{
-    animation: scale 0.7s ease-in-out;
+  &__content {
     @extend %grey;
    }
   &__list {
@@ -401,6 +398,27 @@
         margin-right: 15px;
       }
     }
+  }
+}
+
+.show {
+  display: block;
+}
+.hide {
+  display: none;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
   }
 }
 
