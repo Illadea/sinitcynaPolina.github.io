@@ -485,7 +485,6 @@
     &__image {
       filter: grayscale(50%) contrast(1) brightness(90%);
       mix-blend-mode: screen;
-      box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
       max-width: 470px;
       &:hover {
         filter: unset;
@@ -494,7 +493,10 @@
       }
       & img {
         max-width: 470px;
+        min-height: 260px;
         border-radius: 4px;
+        box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+        object-fit: cover;
       }
     }
     &__description {
@@ -525,6 +527,13 @@
       font-size: 17px;
       &_right {
         text-align: left;
+      }
+      & a {
+        @extend %green;
+        &:hover {
+          transition: 0.5s;
+          text-decoration: underline;
+        }
       }
     }
     &__technologies {
@@ -611,23 +620,6 @@
     }
   }
 }
-
-// @media (max-width: 1210px){
-//   .page-section-projects {
-//     &__inner {
-//       flex-direction: column;
-//       }
-//     &__description {
-//       text-align: left;
-//     }
-//     &__technologies {
-//       justify-content: flex-start;
-//     }
-//     &__links {
-//       justify-content: flex-start;
-//     }
-//     }
-// }
 
  // 5th BLOCK STYLES 
 .page-section-contacts {
